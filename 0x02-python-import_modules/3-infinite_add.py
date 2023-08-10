@@ -9,4 +9,3 @@ if __name__ == "__main__":
         result += int(args[i])
 
     print(result)
-
