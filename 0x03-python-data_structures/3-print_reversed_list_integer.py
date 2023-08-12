@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def print_reversed_list_integer(my_list=[]):
-    for e in my_list[::-1]:
-        print("{:d}".format(e))
+    """Print all int of a lst in reverse order."""
+    return my_list[::-1]
