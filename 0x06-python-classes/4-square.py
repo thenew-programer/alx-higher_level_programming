@@ -25,6 +25,7 @@ class Square:
     """
     size - getter : gets the __size attribute
     """
+    @property
     def size(self):
         return self.__size
     """
@@ -32,6 +33,7 @@ class Square:
     args:
         value (int): the value we want to set to our var
     """
+    @size.setter
     def size(self, value):
         if type(value) is not int:
             raise TypeError("size must be an integer")
