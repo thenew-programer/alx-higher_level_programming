@@ -4,35 +4,43 @@
 
 
 class Square:
-
+    """ constructor - initialize a private instance attribute
+        args:
+            size (int): the private instance attribute
+    """
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize a new square.
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
 
-        Args:
-            size (int): The size of the new square.
-            position (int, int): The position of the new square.
-        """
-        self.size = size
-        self.position = position
+        if type(position) is not tuple or
+        type(position[0]) is not int or
+        type(position[1]) is not int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = position
+    """
+    area - returns the area of the square
+    """
 
     def area(self):
-        """
-        area - returns the area of the square
-        """
         return self.__size ** 2
+    """
+    size - getter : gets the __size attribute
+    """
     @property
     def size(self):
-        """
-        size - getter : gets the __size attribute
-        """
         return self.__size
+    """
+    size - setter : change the  __size attribute
+    args:
+        value (int): the value we want to set to our var
+    """
     @size.setter
     def size(self, value):
-        """
-        size - setter : change the  __size attribute
-        args:
-            value (int): the value we want to set to our var
-        """
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
