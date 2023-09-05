@@ -16,8 +16,8 @@ class Rectangle:
     :method area: public methond -> int
     :method perimeter: public method -> int
     """
-
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         if type(width) is not int:
             raise TypeError("width must be an integer")
