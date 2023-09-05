@@ -6,6 +6,8 @@ def matrix_divided(matrix, div):
     """divide a square matrix
     :param matrix: (list of lists)
     :param div: (int, float)
+
+    Return: new matrix
     """
     if type(matrix) is list:
         for i in range(len(matrix)):
