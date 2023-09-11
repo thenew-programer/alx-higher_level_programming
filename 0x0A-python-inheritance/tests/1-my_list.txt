@@ -1,0 +1,31 @@
+# 1-my_list.txt
+
+>>> MyList = __import__('1-my_list').MyList
+
+#
+# test 1
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(4)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 2, 3, 4, 5]
+
+#
+# test 2
+>>> rabbish =  my_list.pop(4)
+>>> print(my_list)
+[1, 2, 3, 4]
+
+#
+# test 3
+>>> my_list = MyList([1, 10, 3, 4, 2])
+>>> print(my_list)
+[1, 10, 3, 4, 2]
+
+#
+# test 4
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 10]
