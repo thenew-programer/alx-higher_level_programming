@@ -13,4 +13,4 @@ def write_file(filename="", text=""):
         text (str): text to be written into the file
     """
     with open(filename, mode="w", encoding="utf-8") as f:
-        f.write(text)
+        return f.write(text)
