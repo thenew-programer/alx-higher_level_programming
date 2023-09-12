@@ -10,6 +10,7 @@ def write_file(filename="", text=""):
 
     Args:
         filename (str): filename to be read
+        text (str): text to be written into the file
     """
     with open(filename, mode="w", encoding="utf-8") as f:
         f.write(text)
