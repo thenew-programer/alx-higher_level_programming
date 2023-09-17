@@ -43,7 +43,12 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        if dictionary:
+        """Return a class instantied from a dictionary of attributes.
+
+        Args:
+            **dictionary (dict): Key/value pairs of attributes to initialize.
+        """
+        if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
             else:
@@ -53,11 +58,19 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Return a list of classes instantiated from a file of JSON strings.
+
+        Reads from `<cls.__name__>.json`.
+
+        Returns:
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
+        """
         filename = str(cls.__name__) + ".json"
         try:
-            with open(filename, "r", encoding="utf-8") as f:
-                list_dicts = Base.from_json_string(f.read())
-                return [cls.create(**kwargs) for kwargs in list_dicts]
+            with open(filename, "r") as jsonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
 
@@ -104,7 +117,6 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
-
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Rectangles and Squares using the turtle module.
