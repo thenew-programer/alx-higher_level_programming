@@ -18,13 +18,14 @@ class Base:
         __nb_object (int): Number of instantiated Bases.
     """
     __nb_objects = 0
+
     def __init__(self, id=None):
         if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
         else:
             self.id = id
-        
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON serialization of a list of dicts.
@@ -50,7 +51,6 @@ class Base:
             else:
                 list_dicts = [obj.to_dictionary() for obj in list_objs]
                 f.write(Base.to_json_string(list_dicts))
-
 
     @staticmethod
     def from_json_string(list_dictionaries):
@@ -142,6 +142,7 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Rectangles and Squares using the turtle module.
