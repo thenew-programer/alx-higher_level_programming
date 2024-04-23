@@ -4,7 +4,7 @@ module.exports = class Square extends require('./4-rectangle.js') {
     super(size, size);
   }
 
-  charPrint (char = 'X') {
-    this.print(char);
+  charPrint (c = 'X') {
+    this.print(c);
   }
 };
