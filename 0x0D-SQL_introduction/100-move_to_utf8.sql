@@ -7,6 +7,3 @@ USE hbtn_0c_0;
 ALTER TABLE first_table
     CONVERT TO CHARACTER SET uft8mb4
     COLLATE utf8mb4_unicode_ci;
--- converts name col in first_table table to UTF8 
-ALTER TABLE first_table
-    MODIFY name CHARACTER SET utf8mb4;
