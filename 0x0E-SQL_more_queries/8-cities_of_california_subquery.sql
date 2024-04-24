@@ -5,4 +5,3 @@ SELECT id, name FROM cities
       FROM states
       WHERE name = California
     );
-    ORDER BY cities.id;
