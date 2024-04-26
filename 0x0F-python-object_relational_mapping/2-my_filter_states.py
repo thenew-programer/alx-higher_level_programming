@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
-lists all states with a name starting with N
-(upper N) from the database hbtn_0e_0_usa
+This script that takes in an argument and displays
+all values in the states table of hbtn_0e_0_usa
+where name matches the argument.
 """
 
-from sys import argv
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
     query = "SELECT * FROM states \
