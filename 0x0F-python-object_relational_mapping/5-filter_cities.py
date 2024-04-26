@@ -26,7 +26,7 @@ if __name__ == "__main__":
     with conn.cursor() as cur:
         cur.execute("""
             SELECT
-                cities.id, cities.name
+                cities.name
             FROM
                 cities
             JOIN
@@ -37,9 +37,9 @@ if __name__ == "__main__":
                 states.name LIKE BINARY %s
             ORDER BY
                 cities.id ASC
-        """, argv[4])
+        """, (argv[4],))
 
         records = cur.fetchall()
 
     if records is not None:
-        print(", ".join([row[1] for row in records]))
+        print(", ".join(records)
