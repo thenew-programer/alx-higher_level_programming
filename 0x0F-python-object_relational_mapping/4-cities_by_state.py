@@ -35,6 +35,6 @@ if __name__ == "__main__":
         """)
 
         rows = cur.fetchall()
-        if rows:
-            for row in rows:
-                print(row)
+    if rows:
+        for row in rows:
+            print(row)
