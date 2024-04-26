@@ -12,7 +12,7 @@ if __name__ == "__main__":
     connect to db and run the sql query
     """
     conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                           passwd=argv[2], db=argv[3], charset="utf8")
+                           passwd=argv[2], db=argv[3])
     cur = conn.cursor()
     # HERE I have to know SQL to grab all states in my database
     cur.execute("SELECT * FROM states \
@@ -21,5 +21,3 @@ if __name__ == "__main__":
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
-    cur.close()
-    conn.close()
