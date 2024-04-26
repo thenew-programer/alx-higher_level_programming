@@ -15,7 +15,6 @@ if __name__ == "__main__":
     connect to db, construct the query
     and run the sql query
     """
-    state_name = {'name': argv[4]}
     conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                            passwd=argv[2], db=argv[3])
     with conn.cursor() as cur:
@@ -25,10 +24,10 @@ if __name__ == "__main__":
             FROM
                 states
             WHERE
-                name LIKE BINARY %(name)s
+                name LIKE BINARY %s
             ORDER BY
                 states.id ASC
-        """, state_name)
+        """, argv[4])
 
         rows = cur.fetchall()
 
