@@ -26,7 +26,7 @@ if __name__ == "__main__":
     with conn.cursor() as cur:
         cur.execute("""
             SELECT
-                cities.id, cities.name, states.name
+                cities.name
             FROM
                 cities
             JOIN
@@ -42,5 +42,4 @@ if __name__ == "__main__":
         records = cur.fetchall()
 
     if records is not None:
-        for row in records:
-            print(row)
+        print(", ".join(records)
