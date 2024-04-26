@@ -42,4 +42,4 @@ if __name__ == "__main__":
         records = cur.fetchall()
 
     if records is not None:
-        print(", ".join(records)
+        print(", ".join(records))
