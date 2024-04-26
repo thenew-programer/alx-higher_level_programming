@@ -18,9 +18,10 @@ if __name__ == "__main__":
     - Results must be displayed as they are in the example below
     - Your code should not be executed when imported
     '''
-    conn = MySQLdb.connect(host='localhost', port=3306, user=argv[1],
-                           passwd=argv[2], db=argv[3])
-    with conn.curser() as cur:
+    conn = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
+                         passwd=argv[2], db=argv[3])
+
+    with conn.cursor() as cur:
         cur.execute("""
             SELECT
                 cities.id, cities.name, states.name
@@ -34,7 +35,8 @@ if __name__ == "__main__":
                 cities.id ASC
         """)
 
-        rows = cur.fetchall()
-    if rows:
-        for row in rows:
+        records = cur.fetchall()
+
+    if records is not None:
+        for row in records:
             print(row)
