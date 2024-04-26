@@ -27,10 +27,14 @@ if __name__ == "__main__":
             FROM
                 cities
             JOIN
-                states ON cities.state_id = states.id
+                states
+            ON
+                cities.state_id = states.id
             ORDER BY
                 cities.id ASC
-                    """)
+        """)
+
         rows = cur.fetchall()
-        for row in rows:
-            print(row)
+        if rows:
+            for row in rows:
+                print(row)
