@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-script that lists all State objects from the database hbtn_0e_6_usa
+script that lists all State objects
+from the database hbtn_0e_6_usa
 """
 
 from sys import argv
@@ -9,7 +10,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    """ 
+    """
     fetch all records from states table
     """
 
@@ -20,5 +21,5 @@ if __name__ == "__main__":
 
     session = Session()
 
-    for row in session.query(State).order_by(State.id):
-        print('{}: {}'.format(row.id, row.name))
+    for state in session.query(State).order_by(State.id):
+        print('{0}: {1}'.format(state.id, state.name))
