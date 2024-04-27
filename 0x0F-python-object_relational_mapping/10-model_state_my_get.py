@@ -17,7 +17,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    instance = session.query(State).filter(State.name == (sys.argv[4], )).first()
+    instance = session.query(State).filter(
+        State.name == (sys.argv[4], )).first()
     if instance:
         print(instance.id)
     else:
