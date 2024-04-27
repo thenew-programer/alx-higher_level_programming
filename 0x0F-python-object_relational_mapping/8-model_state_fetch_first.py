@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-script that lists all State objects
+script that lists State objects
 from the database hbtn_0e_6_usa
+with id == 1
 """
 
 import sys
@@ -16,5 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     instance = session.query(State).filter(State.id == 1).first()
-    print(instance.id, instance.name, sep=": ")
+    if instance:
+        print(instance.id, instance.name, sep=": ")
+    else:
+        print('Nothing')
     session.close()
