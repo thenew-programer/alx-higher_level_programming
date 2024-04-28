@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-'''
-update db record where name
-is New Mexico
-and id = 2
-'''
+''' update db record to is New Mexico Where id = 2 '''
 
 import sys
 from model_state import Base, State
@@ -21,5 +17,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    session.update(State) .filter(State.id == 2)
+    result = session.query(State).filter(State.id == 2).first()
+    result.name = 'New Mexico'
+    session.commit()
     session.close()
